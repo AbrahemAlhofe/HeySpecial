@@ -1,5 +1,6 @@
 <template lang='pug'>
     .layout#default
+        TheNavbar
         Nuxt
 </template>
 <script>
