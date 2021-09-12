@@ -28,6 +28,7 @@ export default {}
 * { box-sizing: border-box }
 body { margin: 0; }
 .layout#default {
+    direction: rtl;
     width: 100vw;
     min-height: 100vh;
     background-color: var(--gray-100); 
