@@ -30,6 +30,6 @@ body { margin: 0; }
 .layout#default {
     width: 100vw;
     min-height: 100vh;
-    background-color: var(--gray-95)    
+    background-color: var(--gray-100); 
 }
 </style>
