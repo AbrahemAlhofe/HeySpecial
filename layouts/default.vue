@@ -7,6 +7,8 @@
 export default {}
 </script>
 <style lang="scss">
+@import url("@/assets/fonts/Cairo/setup.css");
+
 :root {
   
     --white: hsl(0deg, 0%, 100%);
