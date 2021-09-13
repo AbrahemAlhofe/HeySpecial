@@ -1,5 +1,13 @@
 <template lang='pug'>
 .page#index
+  .quote
+    .quote__background
+    .quote__body.
+      (مش عايز، مش حابب، لا، 🤐،😐) .. شوية تعبيرات يومية لمريض التوحد ، عدم رغبة لفعل اي شيء ، عدم رغبة للتحدث مع الناس او الاختلاط معاهم ، انطوائي .. وحيد ! 
+      مرض التوحد هو حالة بتأثر علي كيفية تمييز الشخص للناس اللي حواليه وبتغير طريقة تعامله معاهم .. العلاقات البشرية كابوس بالنسباله ! 
+      وبيأثر علي لغة المريض وسلوكه .. 
+      دا معناه انك لازم تتعاملي معته معاملة خاصة جداً عشان تقدري ذكاءه .. لأنه غالباً بيكون ذكاء خارق ! ، موقع heyspecial هيقدر يعرفك ازاي تعملي كدة عن طريق مجموعة اسألة وأجوبة .. ، لانه مش مجرد طفل عادي .. هو طفل special ♥️
+    .quote__sign فريق HeySpecial
   section.section#tests
     h2.section__title التقييمات
     NuxtLink(to="/tools/tests/giliam").item
@@ -10,6 +18,39 @@
 export default {}
 </script> 
 <style lang="scss">
+.quote {
+  width: 455px;
+  height: 285px;
+  padding: 1em;
+  border-radius: 0.5em;
+  margin: auto;
+  margin-top: 2.5em;
+  margin-bottom: 4em;
+  font-family: "Cairo";
+  position: relative;
+  &__sign {
+    position: absolute;
+    font-family: 'Pacifico', 'Cairo';
+    left: 40px;
+    bottom: -10px;
+  }
+  &__body {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    text-align: justify;
+  }
+  &__background {
+    background-color: var(--white);
+    width: 100%;
+    height: 100%;
+    box-shadow: 0px 10px 15px var(--gray-90);
+    border-radius: 0.5em;
+    transform: translate(3em, 2em);
+  }
+}
 .section {
 
   &__title {
