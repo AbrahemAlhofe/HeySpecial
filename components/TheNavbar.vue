@@ -8,6 +8,7 @@ export default {}
 #navbar {
     position: sticky;
     width: 100vw;
+    height: 10vh;
     background-color: var(--white);
     padding: 0.5em;
     display: flex;
