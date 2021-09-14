@@ -1,7 +1,7 @@
 <template lang='pug'>
-  .section
-    h1.section__title {{ title }}
-    .section__form
+  .v-section
+    h1.v-section__title {{ title }}
+    .v-section__form
       v-section-quiz(
         v-for='quiz, index in quizzes'
         :key='index'
@@ -31,7 +31,7 @@ export default {
 }
 </script>
 <style lang='scss'>
-.section {
+.v-section {
 
   width: 55vw;
 
