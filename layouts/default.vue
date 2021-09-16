@@ -2,6 +2,7 @@
     .layout#default
         TheNavbar
         Nuxt
+        TheFooter
 </template>
 <script>
 export default {}
@@ -30,7 +31,7 @@ export default {}
 body { margin: 0; }
 .layout#default {
     direction: rtl;
-    width: 100vw;
+    width: 100%;
     min-height: 100vh;
     background-color: var(--gray-100); 
 }
