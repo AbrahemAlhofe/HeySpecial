@@ -1,7 +1,7 @@
 <template lang='pug'>
     .layout#default
         TheNavbar
-        Nuxt
+        Nuxt.layout__content
         TheFooter
 </template>
 <script>
@@ -29,10 +29,23 @@ export default {}
 }
 * { box-sizing: border-box }
 body { margin: 0; }
-.layout#default {
-    direction: rtl;
-    width: 100%;
-    min-height: 100vh;
-    background-color: var(--gray-100); 
+.layout {
+
+    &#default {
+        direction: rtl;
+        width: 100%;
+        min-height: 100vh;
+        background-color: var(--gray-100); 
+        font-family: 'Cairo';
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__content {
+        flex-grow: 1;
+    }
+
 }
+
+
 </style>

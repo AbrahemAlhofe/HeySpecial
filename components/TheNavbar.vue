@@ -12,7 +12,7 @@ export default {}
 <style lang='scss'>
 #navbar {
     position: sticky;
-    width: 100vw;
+    width: 100%;
     height: 10vh;
     background-color: var(--white);
     padding: 0.5em;
