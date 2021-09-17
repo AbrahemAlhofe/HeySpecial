@@ -5,12 +5,12 @@
     section.section#tests
       h2.section__title التقييمات
       NuxtLink(to="/tools/tests/giliam").item
-        img( src='~/assets/images/pages/index/giliam.jpg' ).item__thumbnail
+        img( src='~/assets/images/pages/index/giliam.jpg' alt='صورة تحتوي علي مجموعة من الأشكال الهندسية ثلاثية الأبعاد').item__thumbnail
         .item__caption مقياس جيليام لتشخيص التوحدية
     section.section#games
       h2.section__title الألعاب
       NuxtLink(to="/tools/games/imitate").item
-        img( src='~/assets/images/pages/index/imitate-game.jpg' ).item__thumbnail
+        img( src='~/assets/images/pages/index/imitate-game.jpg' alt='صورة تحتوي علي مجموعة من الوجوه المتبسمة ثلاثية الأبعاد' ).item__thumbnail
         .item__caption لعبة التقليد
 </template>
 <script>
