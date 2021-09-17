@@ -1,6 +1,6 @@
 <template lang='pug'>
 NuxtLink.hey-special-logo( to='/' title='HeySpecial' )
-    img.hey-special-logo__brandmark( src='~/assets/brand/logo.svg' )
+    img.hey-special-logo__brandmark( src='~/assets/brand/logo.svg' alt='شعار الموقع و هو عبارة عن يد بيضاء خلفها دائرة متدرجة من الأصفر إلي الأحمر' )
     div( v-if='isFull' ).hey-special-logo__type HeySpecial
 </template>
 <script>
