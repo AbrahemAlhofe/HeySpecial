@@ -1,3 +1,5 @@
+require("dotenv").config()
+
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -14,7 +16,6 @@ export default {
       { rel: "apple-touch-icon", sizes: "180x180", href: "/favicons/apple-touch-icon.png" },
       { rel: "icon", sizes: "32x32", href: "/favicons/favicon-32x32.png", type: "image/png" },
       { rel: "icon", sizes: "16x16", href: "/favicons/favicon-16x16.png", type: "image/png" },
-      { rel: "manifest", href: "/favicons/site.webmanifest" },
       { rel: "mask-icon", href: "/favicons/safari-pinned-tab.svg", color: "#5bbad5" }
     ]
   },
@@ -49,8 +50,43 @@ export default {
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
+    icon: { purpose: 'maskable' },
+    workbox: { dev: process.env.NODE_ENV === "development" },
     manifest: {
-      lang: 'en'
+      lang: 'ar',
+      name: "HeySpecial",
+      short_name: "HeySpecial",
+      description: 'HeySpecial هو موقع بيقدم مجموعة من الأدوات لمساعدة الأشخاص المصابين بإضطارب طيف التوحد من إختبارات و ألعاب . . . إلخ',
+      icons: [
+          {
+              "src": "/favicons/android-chrome-512x512.png",
+              "sizes": "512x512",
+              "type": "image/png",
+          },
+          {
+              "src": "/favicons/android-chrome-192x192.png",
+              "sizes": "192x192",
+              "type": "image/png",
+          },
+          {
+            "src": "/favicons/apple-touch-icon.png",
+            "sizes": "180x180",
+            "type": "image/png",
+          },
+          {
+            "src": "/favicons/favicon-32x32.png",
+            "sizes": "32x32",
+            "type": "image/png",
+          },
+          {
+            "src": "/favicons/favicon-16x16.png",
+            "sizes": "16x16",
+            "type": "image/png",
+          },
+      ],
+      "theme_color": "#ffffff",
+      "background_color": "#ffffff",
+      "display": "standalone"
     }
   },
 
