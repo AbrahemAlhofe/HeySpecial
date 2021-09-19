@@ -32,7 +32,7 @@ import party from 'party-js';
 
 export default {
     data: vm => ({
-        images: require.context( '~/assets/images/pages/tools/games/imitate' , true, /\.jpg$/ ),
+        images: require.context( '~/assets/images/pages/tools/games/imitate' , true, /\.png$/ ),
         currentSlideIndex: 0,
         status: 'idle'
     }),
