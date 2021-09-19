@@ -26,6 +26,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    '~/plugins/splide.client.js'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -51,7 +52,7 @@ export default {
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
     icon: { purpose: 'maskable' },
-    workbox: { dev: process.env.NODE_ENV === "development" },
+    workbox: { dev: process.env.NODE_ENV === "testing" },
     manifest: {
       lang: 'ar',
       name: "HeySpecial",

@@ -1,5 +1,5 @@
 <template lang='pug'>
-  button( @click="$emit('click')" ).v-button
+  button( @click="$emit('click', $event)" ).v-button
     slot
 </template>
 <script>

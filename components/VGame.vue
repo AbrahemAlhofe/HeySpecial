@@ -1,0 +1,100 @@
+<template lang='pug'>
+  
+    .game
+        
+        .game__stage#explain( v-if="currentStage === 'explain'" )
+                
+            .dialog
+
+                h1.dialog__title {{ title }}
+                
+                .dialog__body: slot( name='explain' )
+
+                .dialog__footer
+                    v-button( @click='nextStage' ) إبدأ اللعبة
+        
+        .game__stage#action( v-if="currentStage === 'action'" )
+            slot( keep-alive name='action' )
+
+        .game__stage#result( v-if="currentStage === 'result'" )
+            slot( name='result' )
+
+</template>
+
+<script>
+export default {
+
+    data: vm => ({
+        
+        stages: ['explain', 'action', 'result'],
+
+        currentStage: 'explain'
+
+    }),
+
+    computed : {
+
+        currentStageIndex () { return this.stages.indexOf(this.currentStage) }
+
+    },
+
+    methods: {
+
+        nextStage () {
+
+            this.currentStage = this.stages[ this.currentStageIndex + 1 ]
+
+        },
+
+        restart () {
+
+            this.currentStage = this.stages[0]
+
+        }
+
+    },
+
+    props: ['title']
+    
+}
+</script>
+
+<style lang='scss'>
+@import '@/styles/mixins/screen.scss';
+
+.game {
+
+    display: flex;
+
+    &__stage {
+        
+        width: 100%;
+        flex-grow: 1;
+
+    }
+
+    &__stage#explain .dialog {
+        
+        width: 85vw;
+        background-color: var(--white);
+        padding: 0.5em;
+        border-radius: 0.5em;
+        text-align: center;
+        box-shadow: 0px 10px 15px var(--gray-90);
+        margin: auto;
+        
+        &__title { margin: 0 }
+
+        &__body {
+            text-align: justify;
+            padding: 0.5em;
+        }
+
+        @include screen("sm") { width: 60vw }
+
+        @include screen("lg") { width: 40vw }
+
+    }
+
+}
+</style>

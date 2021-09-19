@@ -12,6 +12,9 @@
       NuxtLink(to="/tools/games/imitate").item
         img( src='~/assets/images/pages/index/imitate-game.jpg' alt='صورة تحتوي علي مجموعة من الوجوه المتبسمة ثلاثية الأبعاد' ).item__thumbnail
         .item__caption لعبة التقليد
+      NuxtLink(to="/tools/games/recognize-behaviour").item
+        img( src='~/assets/images/pages/index/recognize-behaviour.jpg' alt='صورة تحتوي علي فتاة جالسة علي كرسي و تحمل لابتوب' ).item__thumbnail
+        .item__caption لعبة التعرف علي السلوك
 </template>
 <script>
 export default {}
@@ -40,7 +43,7 @@ export default {}
     border-radius: 0.5em;
     overflow: hidden;
     gap: 1em;
-    box-shadow: 0px 10px 15px var(--gray-95);
+    box-shadow: 0px 10px 15px var(--gray-90);
     &__thumbnail {
       -webkit-mask-image: -webkit-gradient(linear, right 75%, left bottom, from(var(--white)), to(hsl(0deg 0% 0% / 0%)));
     }
