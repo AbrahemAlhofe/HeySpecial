@@ -15,6 +15,9 @@
       NuxtLink(to="/tools/games/recognize-behaviour").item
         img( src='~/assets/images/pages/index/recognize-behaviour.jpg' alt='صورة تحتوي علي فتاة جالسة علي كرسي و تحمل لابتوب' ).item__thumbnail
         .item__caption لعبة التعرف علي السلوك
+      NuxtLink(to="/tools/games/first-character").item
+        img( src='~/assets/images/pages/index/first-character.jpg' alt='صورة مجموعة من الأحرف الإنجليزية ثلاثية الأبعاد علي خلفية صفراء' ).item__thumbnail
+        .item__caption لعبة الحرف الأول
 </template>
 <script>
 export default {}

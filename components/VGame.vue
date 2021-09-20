@@ -17,7 +17,16 @@
             slot( keep-alive name='action' )
 
         .game__stage#result( v-if="currentStage === 'result'" )
-            slot( name='result' )
+            
+            .dialog
+
+                h1.dialog__title أحسنت
+                
+                .dialog__body: slot( name='result' )
+
+                .dialog__footer
+                    v-button( @click='restart' ) إعادة اللعب
+            
 
 </template>
 
@@ -69,11 +78,14 @@ export default {
     &__stage {
         
         width: 100%;
-        flex-grow: 1;
+        perspective: 1000px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
     }
 
-    &__stage#explain .dialog {
+    .dialog {
         
         width: 85vw;
         background-color: var(--white);
