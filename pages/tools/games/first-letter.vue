@@ -17,7 +17,7 @@
 </template>
 <script>
 import party from 'party-js';
-const images = require.context( '~/assets/images/pages/tools/games/first-character' , true, /\.png$/ )
+const images = require.context( '~/assets/images/pages/tools/games/first-letter' , true, /\.png$/ )
 
 function shuffle(array) {
   let currentIndex = array.length,  randomIndex;
