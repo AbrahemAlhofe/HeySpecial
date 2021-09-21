@@ -27,7 +27,10 @@ export default {}
     --black: hsl(0deg, 0%, 20%);
 
 }
-* { box-sizing: border-box }
+* {
+    box-sizing: border-box;
+    font-family: 'Cairo';
+}
 body { margin: 0; }
 .layout {
 
@@ -36,7 +39,6 @@ body { margin: 0; }
         width: 100%;
         min-height: 100vh;
         background-color: var(--gray-100); 
-        font-family: 'Cairo';
         display: flex;
         flex-direction: column;
     }
@@ -46,6 +48,4 @@ body { margin: 0; }
     }
 
 }
-
-
 </style>
