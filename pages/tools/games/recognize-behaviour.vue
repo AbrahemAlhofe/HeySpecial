@@ -6,10 +6,11 @@
 
         template( #action )
             .slider
-                splide( :options='{ direction: "rtl" }' )
+                splide( :options='{ direction: "rtl" }' @splide:pagination:updated='splidePaginationUpdated' )
                     splide-slide.slide( v-for='caption, path in slides' :key='path' )
                         .slide__image: img( :src='require(`~/assets/images/pages/tools/games/recognize-behaviour/${path}.png`)' )
                         .slide__caption {{ caption }}
+                    splide-slide
             button( @click='party' ).slider__button#party 🥳
 
 </template>
@@ -38,6 +39,10 @@ export default {
 
         party ({ target }) {
             party.confetti(target, { count: party.variation.range(20, 80) })
+        },
+
+        splidePaginationUpdated (splide, previousItem, activeItem = {}) {
+            if ( activeItem.page === this.slides.length - 1 ) this.$refs.game.nextStage()
         }
 
     }
@@ -53,10 +58,7 @@ export default {
     }
 
     &__stage {
-        display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
     }
 
     .slider {
