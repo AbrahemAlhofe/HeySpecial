@@ -11,7 +11,7 @@
                 .dialog__body: slot( name='explain' )
 
                 .dialog__footer
-                    v-button( @click='nextStage' ) إبدأ اللعبة
+                    vs-button( @click='nextStage' gradient ) إبدأ اللعبة
         
         .game__stage#action( v-if="currentStage === 'action'" )
             slot( keep-alive name='action' )
@@ -25,7 +25,7 @@
                 .dialog__body: slot( name='result' )
 
                 .dialog__footer
-                    v-button( @click='restart' ) إعادة اللعب
+                    vs-button( @click='restart' gradient) إعادة اللعب
             
 
 </template>
@@ -100,6 +100,10 @@ export default {
         &__body {
             text-align: justify;
             padding: 0.5em;
+        }
+
+        &__footer button {
+            margin: auto;
         }
 
         @include screen("sm") { width: 60vw }
