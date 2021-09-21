@@ -1,33 +1,48 @@
-<template lang='pug'>
-    nav#navbar
-        HeySpecialLogo
-        #navbar__links
-            NuxtLink( to='/' ).navbar__link الصفحة الرئيسية
-            NuxtLink( to='/tools/games/imitate' ).navbar__link الألعاب
-            NuxtLink( to='/tools/tests/giliam' ).navbar__link التقييمات
+<template lang="pug">
+    #navbar
+        vs-navbar( center-collapsed fixed shadow-scroll padding-scroll v-model='active')
+            template(#left): HeySpecialLogo
+            vs-navbar-item#home(:active="active == '/'") الصفحة الرئيسية
+            vs-navbar-item#games(:active="active == '/tools/games/imitate'") الألعاب
+            vs-navbar-item#tests(:active="active == '/tools/tests/giliam'") الإختبارات
+            template(#right)
+                vs-button تسجيل الدخول
 </template>
 <script>
-export default {}
-</script>
-<style lang='scss'>
-#navbar {
-    position: sticky;
-    width: 100%;
-    height: 10vh;
-    background-color: var(--white);
-    padding: 0.5em;
-    display: flex;
-    &__links {
-        flex-grow: 1;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 1em;
+export default {
+    
+    data: vm => ({
+
+        links: {
+            home: '/',
+            games: '/tools/games/imitate',
+            tests: '/tools/tests/giliam'
+        }
+
+    }),
+
+    computed : {
+
+        active: {
+
+            get () {
+
+                return this.$route.path
+
+            },
+
+            set (path) {
+
+                this.$router.push( this.links[path] )
+                
+            }
+
+        }
+
     }
-    .navbar__link {
-        text-decoration: none;
-        font-family: 'Cairo';
-        color: var(--black);
-    }
+
 }
+</script>
+<style lang="scss" scoped>
+#navbar { height: 5em }
 </style>

@@ -15,11 +15,27 @@
       NuxtLink(to="/tools/games/recognize-behaviour").item
         img( src='~/assets/images/pages/index/recognize-behaviour.jpg' alt='صورة تحتوي علي فتاة جالسة علي كرسي و تحمل لابتوب' ).item__thumbnail
         .item__caption لعبة التعرف علي السلوك
+      NuxtLink(to="/tools/games/first-letter").item
+        img( src='~/assets/images/pages/index/first-letter.jpg' alt='صورة مجموعة من الأحرف الإنجليزية ثلاثية الأبعاد علي خلفية صفراء' ).item__thumbnail
+        .item__caption لعبة الحرف الأول
+    
+    IndexSection#store( title='المتجر' )
+      IndexCard.product( v-for='product, index of store.products' :key='index' :link="product.link" :thumbnail='product.thumbnail' :caption='product.caption' )
+        template( #header ) {{ product.caption }}
+        template( #footer )
+          .product__price
+            span السعر
+            span {{ product.price }}
+
 </template>
 <script>
-export default {}
+import storeProducts from '~/data/store/products.json';
+
+export default {
+  data: vm => ({ store: { products: storeProducts } })
+}
 </script> 
-<style lang="scss">
+<style lang="scss" scoped>
 .sections {
   display: flex;
   flex-wrap: wrap;
@@ -31,6 +47,10 @@ export default {}
   &__title {
     padding-right: 1em;
     color: var(--black);
+  }
+
+  &__items {
+    padding-inline: 1em;
   }
 
   .item {
@@ -53,6 +73,20 @@ export default {}
       align-items: center;
       color: var(--black);
     }
+  }
+
+  &#store {
+
+    .product {
+
+      &__price {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+    }
+
   }
 
 }
