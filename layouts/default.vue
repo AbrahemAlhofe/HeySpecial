@@ -6,7 +6,13 @@
         TheLoginDialog( :active="$store.state.isLoginDialogOpen" @close='$store.commit("closeLoginDialog")')
 </template>
 <script>
-export default {}
+export default {
+
+    mounted () {
+        this.$nextTick(() => this.$nuxt.$loading.finish())
+    }
+
+}
 </script>
 <style lang="scss">
 @import url("@/assets/fonts/Cairo/setup.css");

@@ -94,5 +94,9 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-  }
+  },
+
+  // Custom Loading Component https://nuxtjs.org/examples/loading/custom-loading-component/
+  loading: '@/components/TheLoadingBar.vue'
+
 }
