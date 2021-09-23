@@ -6,7 +6,7 @@
             vs-navbar-item#games(:active="active == '/tools/games/imitate'") الألعاب
             vs-navbar-item#tests(:active="active == '/tools/tests/giliam'") الإختبارات
             template(#right)
-                vs-button تسجيل الدخول
+                vs-button( @click='$store.commit("openLoginDialog")' ) تسجيل الدخول
 </template>
 <script>
 export default {

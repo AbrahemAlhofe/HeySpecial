@@ -3,6 +3,7 @@
         TheNavbar
         Nuxt.layout__content
         TheFooter
+        TheLoginDialog( :active="$store.state.isLoginDialogOpen" @close='$store.commit("closeLoginDialog")')
 </template>
 <script>
 export default {}
