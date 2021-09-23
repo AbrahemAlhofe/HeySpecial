@@ -1,11 +1,11 @@
 <template lang='pug'>
   #footer
+    div#name HeySpecial 
     vs-button#facebook(@click='goto("https://www.facebook.com/Hey-Spacial-102271598877467")' color='facebook')
         .vs-button__icon: FacebookIcon
         | Facebook
         template( #animate ) تواصل معنا
 </template>
-
 <script>
 import FacebookIcon from '~/assets/icons/facebook.svg?inline';
 
@@ -24,9 +24,10 @@ export default {
 
 <style lang='scss'>
 #footer {
-
+    display: flex;
     background-color: var(--gray-90);
     padding: 1em;
+    justify-content: space-between;
 
     .vs-button {
         
@@ -48,6 +49,14 @@ export default {
         }
 
     }
+    #name {
+        color: #2452a2;
+        font-family: Pacifico;
+        width: 132px;
+        font-size: 25px;
+        order: 1;
 
+        }
+    
 }
 </style>
