@@ -20,19 +20,27 @@
         .item__caption لعبة الحرف الأول
     
     IndexSection#store( title='المتجر' )
-      IndexCard.product( v-for='product, index of store.products' :key='index' :link="product.link" :thumbnail='product.thumbnail' :caption='product.caption' )
-        template( #header ) {{ product.caption }}
-        template( #footer )
-          .product__price
-            span السعر
-            span {{ product.price }}
+      vs-card-group
+        vs-card(v-for='product in store.products' @click='goto(product.link)')
+          template( #title ): h3 {{ product.caption }}
+          template(#img='')
+            img(:src='product.thumbnail.src' alt='')
+          template(#interactions='')
+            vs-button.btn-chat(gradient)
+              i.bx.bx-chat
+              span.span {{product.price}}
 
 </template>
 <script>
 import storeProducts from '~/data/store/products.json';
 
 export default {
-  data: vm => ({ store: { products: storeProducts } })
+  data: vm => ({ store: { products: storeProducts } }),
+  methods:{
+    goto(link) {
+      window.open(link, '_blank')
+    }
+  }
 }
 </script> 
 <style lang="scss" scoped>
@@ -77,15 +85,7 @@ export default {
 
   &#store {
 
-    .product {
-
-      &__price {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-    }
+    .vs-card__group { direction: ltr }
 
   }
 
