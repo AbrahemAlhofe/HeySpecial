@@ -30,9 +30,8 @@ export default {
       }
 
       &__items {
-        overflow-x: scroll;
         width: 100vw;
-        white-space: nowrap;
+        padding: 1em;
       }
 
     }
