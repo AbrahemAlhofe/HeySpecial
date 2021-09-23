@@ -51,13 +51,11 @@ export default {
 </script>
 
 <style lang='scss'>
-.game {
-    
-    &#recognize-behaviour {
-        flex-grow: 1;
-    }
+.game#recognize-behaviour {
 
-    &__stage {
+    flex-grow: 1;
+
+    .game__stage {
         flex-direction: column;
     }
 
