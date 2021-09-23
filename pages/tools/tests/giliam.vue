@@ -13,7 +13,7 @@
               :quizzes='section.quizzes'
               v-model='sectionsScores[index]'
             )
-            v-button.test__submit-button(@click='submit') أنتهيت
+            vs-button.test__submit-button(@click='submit') أنتهيت
         .result(v-if='status === "finished"')
             .item(v-for='item, index in result.items' :key='index')
                 .item__title {{ item.title }}
@@ -25,7 +25,7 @@
             .item
                 .item__title النوع
                 .item__value {{ result.type }}
-            v-button(@click='status = "pending"') إعادة الإختبار
+            vs-button(@click='status = "pending"') إعادة الإختبار
 </template>
 <script>
 import sections from '@/data/tools/tests/quizzes.json'
@@ -117,6 +117,7 @@ export default {
         display: flex;
         justify-content: space-between;
         margin-bottom: 1em;
+        color: red;
         &__value {
           background-color: var(--primary-80);
           font-family: cursive;
