@@ -48,4 +48,14 @@ body { margin: 0; }
     }
 
 }
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+    display: block;
+    background: var(--gray-90);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--black);
+    border-radius: 5px;
+}
 </style>
