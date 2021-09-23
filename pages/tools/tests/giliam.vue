@@ -4,7 +4,7 @@
             h1.dialog__title مقياس جيليام لتشخيص التوحدية
             p.dialog__body.
                 يعد مقياس جيليام من أهم الأدوات المستخدمة في قياس وتشخيص مرض التوحد ومعرفة مرحلته ودرجة تطوره. يتم استخدام مقياس جيليام للأعمار التي تتراوح ما بين 3-22 عامًا للأشخاص الذين تظهر عليهم أعراض قد تكون أعراضًا للتوحد مثل الاضطرابات السلوكية الحادة أو انعدام مهارات التواصل الاجتماعي.
-            v-button(@click='start') إبدأ الإختبار
+            vs-button(@click='start' gradient) إبدأ الإختبار
         .test(v-if='status === "pending"')
             v-section.test__section(
               v-for='section, index in sections'
@@ -13,7 +13,7 @@
               :quizzes='section.quizzes'
               v-model='sectionsScores[index]'
             )
-            v-button.test__submit-button(@click='submit') أنتهيت
+            vs-button.test__submit-button(@click='submit') أنتهيت
         .result(v-if='status === "finished"')
             .item(v-for='item, index in result.items' :key='index')
                 .item__title {{ item.title }}
@@ -25,7 +25,7 @@
             .item
                 .item__title النوع
                 .item__value {{ result.type }}
-            v-button(@click='status = "pending"') إعادة الإختبار
+            vs-button(@click='status = "pending"') إعادة الإختبار
 </template>
 <script>
 import sections from '@/data/tools/tests/quizzes.json'
@@ -99,6 +99,9 @@ export default {
             text-align: justify;
             padding: 0.5em;
         }
+        .vs-button {
+          margin: auto;
+        }
     }
     
     .result {
@@ -114,6 +117,7 @@ export default {
         display: flex;
         justify-content: space-between;
         margin-bottom: 1em;
+        color: red;
         &__value {
           background-color: var(--primary-80);
           font-family: cursive;
