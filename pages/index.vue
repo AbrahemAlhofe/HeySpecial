@@ -2,11 +2,14 @@
 .page#index
   TheQuote
   .sections
-    section.section#tests
-      h2.section__title التقييمات
-      NuxtLink(to="/tools/tests/giliam").item
-        img( src='~/assets/images/pages/index/giliam.jpg' alt='صورة تحتوي علي مجموعة من الأشكال الهندسية ثلاثية الأبعاد').item__thumbnail
-        .item__caption مقياس جيليام لتشخيص التوحدية
+    IndexSection(title='التقييمات')
+      vs-card(@click='$router.push(`/tools/tests/giliam`)')
+        template(#title) 
+          h3 مقياس جيليام لتشخيص التوحدية
+        template(#img)
+          img(src='~/assets/images/pages/index/giliam.jpg' alt='صورة تحتوي علي مجموعة من الأشكال الهندسية ثلاثية الأبعاد')
+        template(#text): h1
+        
 
     IndexSection#games( title='الالعاب' )
       vs-card-group
@@ -65,7 +68,7 @@ export default {
   
     &__items {
       padding-inline: 1em;
-          padding: 5vw;
+      padding: 5vw;
 
     }
   
