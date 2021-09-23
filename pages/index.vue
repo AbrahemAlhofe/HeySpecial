@@ -19,6 +19,7 @@
       vs-card-group
         vs-card(v-for='product in store.products' @click='goto(product.link)')
           template( #title ): h3 {{ product.caption }}
+          template( #text ): h1
           template(#img='')
             img(:src='product.thumbnail.src' alt='')
           template(#interactions='')
