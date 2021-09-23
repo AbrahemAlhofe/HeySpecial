@@ -61,6 +61,7 @@ export default {
         },
         finish () {
             this.status = "finished"
+            this.currentSlideIndex = 0
         }
     }
 }
