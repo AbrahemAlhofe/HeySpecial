@@ -64,11 +64,12 @@ export default {
     &__title {
       padding-right: 1em;
       color: var(--black);
+      margin: auto;
     }
   
     &__items {
       padding-inline: 1em;
-      padding: 5vw;
+      padding: 3vw;
 
     }
   

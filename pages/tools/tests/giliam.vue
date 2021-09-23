@@ -4,7 +4,7 @@
             h1.dialog__title مقياس جيليام لتشخيص التوحدية
             p.dialog__body.
                 يعد مقياس جيليام من أهم الأدوات المستخدمة في قياس وتشخيص مرض التوحد ومعرفة مرحلته ودرجة تطوره. يتم استخدام مقياس جيليام للأعمار التي تتراوح ما بين 3-22 عامًا للأشخاص الذين تظهر عليهم أعراض قد تكون أعراضًا للتوحد مثل الاضطرابات السلوكية الحادة أو انعدام مهارات التواصل الاجتماعي.
-            v-button(@click='start') إبدأ الإختبار
+            vs-button(@click='start' gradient) إبدأ الإختبار
         .test(v-if='status === "pending"')
             v-section.test__section(
               v-for='section, index in sections'
@@ -98,6 +98,9 @@ export default {
         &__body {
             text-align: justify;
             padding: 0.5em;
+        }
+        .vs-button {
+          margin: auto;
         }
     }
     
