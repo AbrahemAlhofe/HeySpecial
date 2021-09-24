@@ -9,6 +9,7 @@ export default {
     data: vm => ({
         loading: true,
         isReady: false,
+        tip: null,
         loader: null
     }),
     methods: {
@@ -26,10 +27,6 @@ export default {
 
     },
     computed: {
-        tip () {
-            const index = Math.floor( Math.random() * tips.length )
-            return tips[ index ]
-        },
         time () {
             return this.tip.split(" ").length * 250
         }
@@ -40,6 +37,10 @@ export default {
             target: this.$refs.loading,
             color: 'dark'
         })
+
+        this.tip = tips[ Math.floor( Math.random() * tips.length ) ]
+
+        console.log('mounted')
 
     }
 }
