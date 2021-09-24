@@ -1,7 +1,7 @@
 <template lang='pug'>
-    .tip-board( v-if='loading' )
-        .tip-board__content نصيحة 💡 : {{ tip }} 
-        .tip-board__loading( ref='loading' )
+    .loader( v-if='loading' )
+        .loader__content {{ tip }} 
+        .loader__progress( ref='progress' )
 </template>
 <script>
 import tips from '@/data/tips.json';
@@ -16,37 +16,23 @@ export default {
         finish() { this.isReady = true }
     },
     watch: {
-
-        isReady (isReady) {
-
-            if ( !isReady ) return
-
-            setTimeout(() => this.loading = false, this.time)
-        
-        }
-
+        isReady (isReady) { if ( isReady ) setTimeout(() => this.loading = false, this.time) }
     },
     computed: {
-        time () {
-            return this.tip.split(" ").length * 250
-        }
+        time () { return this.tip.split(" ").length * 250 }
     },
     mounted () {
-        
-        this.loader = this.$vs.loading({
-            target: this.$refs.loading,
-            color: 'dark'
-        })
-
-        this.tip = tips[ Math.floor( Math.random() * tips.length ) ]
-
-        console.log('mounted')
-
-    }
+        this.loader = this.$vs.loading({ target: this.$refs.progress, color: 'dark' })
+    },
+    async fetch() {
+        this.tip = "نصيحة 💡 : " + tips[ Math.floor( Math.random() * tips.length ) ]
+    },
+    fetchOnServer: true,
+    fetchKey: 'loader'
 }
 </script>
 <style lang='scss'>
-.tip-board {
+.loader {
     position: fixed;
     top: 0;
     right: 0;
@@ -71,7 +57,7 @@ export default {
         border: 0.2em solid var(--black);
         border-radius: 0.5em;
     }
-    &__loading {
+    &__progress {
         position: absolute;
         background: transparent;
         bottom: 2em;

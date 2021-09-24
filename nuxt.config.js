@@ -97,6 +97,6 @@ export default {
   },
 
   // Custom Loading Component https://nuxtjs.org/examples/loading/custom-loading-component/
-  loading: '@/components/TheLoadingBar.vue'
+  loading: '@/components/TheLoader.vue'
 
 }
