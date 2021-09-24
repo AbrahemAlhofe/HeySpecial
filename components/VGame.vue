@@ -26,7 +26,13 @@
 
                 .dialog__footer
                     vs-button( @click='restart' gradient) إعادة اللعب
-            
+        IndexSection#games( title='' )
+            vs-card-group
+                vs-card(v-for='gameTitle, gameName in games' @click='$router.push(`/tools/games/${gameName}`)' type='2' )
+                    template( #title ): h3 {{ gameTitle }}
+                    template( #text ): h1
+                    template( #img ): img( :src='require(`~/assets/images/pages/index/${gameName}.jpg`)' )
+                    
 
 </template>
 
@@ -37,7 +43,9 @@ export default {
         
         stages: ['explain', 'action', 'result'],
 
-        currentStage: 'explain'
+        currentStage: 'explain',
+        
+        games: { ['first-letter']: 'لعبة الحرف الأول', ['recognize-behaviour']:'لعبة التعرف علي السلوك', ['imitate']: 'لعبة التقليد' }
 
     }),
 
@@ -74,7 +82,16 @@ export default {
 .game {
 
     display: flex;
+    flex-direction: column;
+    margin: auto;
 
+    .vs-card {
+      
+      direction: rtl;
+      &__group { direction: ltr }
+      
+    }
+    
     &__stage {
         
         width: 100%;
@@ -82,19 +99,20 @@ export default {
         display: flex;
         justify-content: center;
         align-items: center;
-
+        height: 100vh;
     }
 
     .dialog {
         
         width: 85vw;
         background-color: var(--white);
-        padding: 0.5em;
+        padding: 25px;
         border-radius: 0.5em;
         text-align: center;
         box-shadow: 0px 10px 15px var(--gray-90);
         margin: auto;
-        
+        margin: 50px;
+
         &__title { margin: 0 }
 
         &__body {
