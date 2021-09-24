@@ -13,14 +13,14 @@
 
     IndexSection#games( title='الالعاب' )
       vs-card-group
-        vs-card(v-for='gameTitle, gameName in games' @click='$router.push(`/tools/games/${gameName}`)' type='2' )
+        vs-card(v-for='gameTitle, gameName in games' :key='gameName' @click='$router.push(`/tools/games/${gameName}`)' type='2' )
           template( #title ): h3 {{ gameTitle }}
           template( #text ): h1
           template( #img ): img( :src='require(`~/assets/images/pages/index/${gameName}.jpg`)' )
 
     IndexSection#store( title='المتجر' )
       vs-card-group
-        vs-card(v-for='product in store.products' @click='goto(product.link)')
+        vs-card(v-for='product, index in store.products' :key='index' @click='goto(product.link)')
           template( #title ): h3 {{ product.caption }}
           template( #text ): h1
           template(#img='')
