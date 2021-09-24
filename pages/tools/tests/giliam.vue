@@ -30,6 +30,16 @@
 <script>
 import sections from '@/data/tools/tests/quizzes.json'
 
+function range (min, max) {
+
+  const range = {}
+
+  for ( let i = min; i <= max; i += 1 ) range[i] = null
+
+  return range
+
+}
+
 export default {
   data : vm => ({
     result: {
@@ -56,10 +66,9 @@ export default {
     },
 
     ['result.score'] (score) {
-      if ( score > 1 && score <= 17 ) this.result.type = "طيف توحد"
-      if ( score > 17 && score <= 27 ) this.result.type = "توحد متوسط"
-      if ( score > 27 && score <= 43 ) this.result.type = "توحد"
-      if ( score > 43 ) this.result.type = "توحد شديد"
+      if ( score in range(1, 17) ) this.result.type = "بسيط"
+      if ( score in range(17, 27) ) this.result.type = "طيف توحد"
+      if ( score in range(27, 46) ) this.result.type = "توحد شديد"
     }
 
   },
