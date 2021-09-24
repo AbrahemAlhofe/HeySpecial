@@ -32,6 +32,8 @@ export default {
 }
 </script>
 <style lang='scss'>
+@import '/styles/mixins/screen.scss';
+
 .loader {
     position: fixed;
     top: 0;
@@ -49,18 +51,32 @@ export default {
     height: 100%;
     background-color: var(--gray-90);
     &__content {
-        font-size: 0.45em;
+
         text-align: justify;
         direction: rtl;
-        width: 60vw;
-        padding: 2em;
         border: 0.2em solid var(--black);
         border-radius: 0.5em;
+        
+        font-size: 0.35em;
+        width: 90vw;
+        padding: 1em;
+
+        @include screen("md") {
+            font-size: 0.45em;
+            width: 60vw;
+            padding: 2em;
+        }
+
+        @include screen("lg") { width: 45vw }
+
+
     }
     &__progress {
         position: absolute;
         background: transparent;
-        bottom: 2em;
+        bottom: 0;
+        width: 3em;
+        height: 3em;
         .vs-loading {
             background: transparent;
         }
