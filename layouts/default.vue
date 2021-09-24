@@ -4,6 +4,7 @@
         Nuxt.layout__content
         TheFooter
         TheLoginDialog( :active="$store.state.isLoginDialogOpen" @close='$store.commit("closeLoginDialog")')
+        TheSidebar( :open='$store.state.isSidebarOpen' )
 </template>
 <script>
 export default {

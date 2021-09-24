@@ -1,15 +1,17 @@
 export const state = () => ({
-    isLoginDialogOpen: false
+    
+    isLoginDialogOpen: false,
+
+    isSidebarOpen: false
+
 })
 
 export const mutations = {
 
-    openLoginDialog (state) {
-        state.isLoginDialogOpen = true
-    },
+    openLoginDialog (state) { state.isLoginDialogOpen = true },
+    closeLoginDialog (state) { state.isLoginDialogOpen = false },
 
-    closeLoginDialog (state) {
-        state.isLoginDialogOpen = false
-    }
+    openSidebar (state) { state.isSidebarOpen = true },
+    closeSidebar (state) { state.isSidebarOpen = false }
 
 }

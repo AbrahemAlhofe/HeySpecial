@@ -7,8 +7,10 @@
             vs-navbar-item#tests(:active="active == '/tools/tests/giliam'") الإختبارات
             template(#right)
                 vs-button( @click='$store.commit("openLoginDialog")' ) تسجيل الدخول
+                vs-button#open-sidebar( icon dark shadow @click='$store.commit("openSidebar")' ): MenuIcon
 </template>
 <script>
+import MenuIcon from '@/assets/icons/menu.svg?inline';
 export default {
     
     data: vm => ({
@@ -39,10 +41,20 @@ export default {
 
         }
 
-    }
+    },
+
+    components: { MenuIcon }
 
 }
 </script>
-<style lang="scss" scoped>
-#navbar { height: 5em }
+<style lang="scss">
+@import "@/styles/mixins/screen.scss";
+
+#navbar {
+    
+    height: 5em;
+
+    #open-sidebar { @include screen("md") { display: none } }
+
+}
 </style>
