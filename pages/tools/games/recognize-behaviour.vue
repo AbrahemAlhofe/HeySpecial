@@ -42,7 +42,7 @@ export default {
         },
 
         splidePaginationUpdated (splide, previousItem, activeItem = {}) {
-            if ( activeItem.page === this.slides.length - 1 ) this.$refs.game.nextStage()
+            if ( activeItem.page === Object.keys( this.slides ).length - 1 ) this.$refs.game.nextStage()
         }
 
     }
