@@ -44,6 +44,8 @@ export default {
 }
 </script> 
 <style lang="scss">
+@import '@/styles/mixins/screen.scss';
+
 .page#index {
 
   .sections {
@@ -54,11 +56,29 @@ export default {
   
   .section {
   
-    .vs-card {
+    .vs-card__group {
+
+      direction: ltr;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .vs-card {
+        
+        direction: rtl;
+        width: 90vw;
+        &__group { direction: ltr }
+        
+      }
       
-      direction: rtl;
-      &__group { direction: ltr }
+      .vs-card__group-next, .vs-card__group-prev { display: none }
       
+      @include screen('md') {
+  
+        .vs-card__group-next, .vs-card__group-prev { display: block }
+
+      }
+
     }
   
     &__title {
@@ -69,8 +89,6 @@ export default {
   
     &__items {
       padding-inline: 1em;
-      padding: 3vw;
-
     }
   
     .item {
