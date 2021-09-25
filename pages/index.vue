@@ -16,7 +16,7 @@
         vs-card(v-for='gameTitle, gameName in games' :key='gameName' @click='$router.push(`/tools/games/${gameName}`)' type='2' )
           template( #title ): h3 {{ gameTitle }}
           template( #text ): h1
-          template( #img ): img( :src='require(`~/assets/images/pages/index/${gameName}.jpg`)' )
+          template( #img ): img( :src='require(`~/assets/images/pages/index/${gameName}.png`)' )
 
     IndexSection#store( title='المتجر' )
       vs-card-group
