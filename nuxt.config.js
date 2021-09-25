@@ -17,6 +17,9 @@ export default {
       { rel: "icon", sizes: "32x32", href: "/favicons/favicon-32x32.png", type: "image/png" },
       { rel: "icon", sizes: "16x16", href: "/favicons/favicon-16x16.png", type: "image/png" },
       { rel: "mask-icon", href: "/favicons/safari-pinned-tab.svg", color: "#5bbad5" }
+    ],
+    script: [
+      { src: "@/scripts/facebook.js" }
     ]
   },
 
@@ -96,7 +99,11 @@ export default {
   build: {
   },
 
+<<<<<<< Updated upstream
   // Custom Loading Component https://nuxtjs.org/examples/loading/custom-loading-component/
   loading: '@/components/TheLoader.vue'
+=======
+  serverMiddleware: ['@/middlewares/auth.js']
+>>>>>>> Stashed changes
 
 }

@@ -5,15 +5,23 @@
             vs-button#google( block color='google' )
                 .vs-button__text التسجيل عن طريق جوجل
                 .vs-button__logo: GoogleIcon
-            vs-button#facebook( block color='facebook' )
+            vs-button#facebook( block color='facebook' @click='loginWithFacebook')
                 .vs-button__text التسجيل عن طريق فيسبوك
                 .vs-button__logo: FacebookIcon
+
+                
 </template>
+
 <script>
 import FacebookIcon from '@/assets/icons/facebook.svg?inline';
 import GoogleIcon from '@/assets/icons/google.svg?inline';
 export default {
     name: "TheLoginDialog",
+    methods: {
+        loginWithFacebook () {
+            window.location = "/auth/facebook"
+        }
+    },
     components: { FacebookIcon, GoogleIcon },
     props: ['active']
 }
