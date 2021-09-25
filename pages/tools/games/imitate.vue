@@ -15,7 +15,7 @@ v-game#imitate( ref='game' title="لعبة التقليد" )
                 img( :src='currentSlide.pathLong' ).slide__image
             .slider__control
                 v-button#prev( @click='prev' ) السابق
-                button( @click='party' ).slider__button#party 🥳
+                button( @click='party' ).slider__button#party 🎁
                 v-button#next( @click='next' ) التالي
 
 </template>

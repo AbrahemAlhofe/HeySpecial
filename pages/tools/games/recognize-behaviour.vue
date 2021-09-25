@@ -11,7 +11,7 @@
                         .slide__image: img( :src='require(`~/assets/images/pages/tools/games/recognize-behaviour/${path}.png`)' )
                         .slide__caption {{ caption }}
                     splide-slide
-            button( @click='party' ).slider__button#party 🥳
+            button( @click='party' ).slider__button#party 🎁
 
 </template>
 
