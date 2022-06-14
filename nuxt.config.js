@@ -96,6 +96,16 @@ export default {
   build: {
   },
 
+  watchers: {
+    
+    webpack: {
+    
+      poll: true
+    
+    }
+
+  },
+
   // Custom Loading Component https://nuxtjs.org/examples/loading/custom-loading-component/
   loading: '@/components/TheLoader.vue'
 
