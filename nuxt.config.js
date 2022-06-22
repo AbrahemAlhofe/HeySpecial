@@ -36,7 +36,8 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://www.npmjs.com/package/@nuxtjs/svg
-    '@nuxtjs/svg'
+    '@nuxtjs/svg',
+    'nuxt-windicss'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
